@@ -100,7 +100,7 @@ b. Queue - care implementează o strategie de tip FIFO
 Evitaţi codul similar în locuri diferite si utilizati array-uri (nu API-ul de colectii).
 
 
-==========================================Exercitii-Laborator6==========================================================
+==========================================Exercitii-Laborator7==========================================================
 1. Definiţi o clasă care să implementeze operaţii pe numere double. Operaţiile vor arunca excepţii.
 
 a. Clasa va trebui să implementeze interfața Calculator, ce conţine trei metode:
@@ -121,8 +121,48 @@ De exemplu, creati clasa MyArithmeticException si folositi-o in metoda divide() 
 
 b. Creati o clasa client cu metoda main in care sa evidentiati prin teste toate cazurile posibile care generează excepţii.
 
-
 2. Scrieti un program Java care:
     a. sa gaseasca cel mai lung cuvant dintr-un fisier text;
     b. sa adauge continutul clasei curente Java in fisierul text utilizat la exercitiul anterior;
     c. sa salveze intr-un array, linie cu linie, continutul fisierului folosit la primul exercitiu.
+
+
+========================================Exercitii-Laborator9_11==========================================================
+1. Creati clasele:
+- Student, care are:
+    - campurile 'nume' (de tip String) si 'medie' (de tip float)
+    - un constructor care initializeaza campurile existente
+- Catalog:
+    - de tip Map -> pentru reţinerea studenţilor dupǎ medie
+    - cheile sunt mediile și valorile sunt liste de studenti
+
+Catalog va menţine cheile ordonate descrescǎtor, de aceea alegeti sa extindeţi o implementare potrivitǎ a
+interfeţei Map care sǎ realizeze implicit acest lucru.
+
+In plus, caracteristicile clasei Catalog definite sunt:
+a. Cheile pot avea valori de la 0 la 10 (corespunzǎtoare mediilor posibile). Verificați acest lucru la adăugare.
+
+b. Valoarea asociată fiecǎrei chei va fi o listǎ (List) care va reţine toţi studenţii cu media rotunjitǎ egalǎ cu cheia.
+Considerǎm cǎ un student are media rotunjitǎ 8 dacǎ media sa este în intervalul [7.50, 8.49].
+
+c. Implementați un Comparator pentru stabilirea ordinii cheilor. Catalog va primi un parametru de tip Comparator în constructor
+și îl va da mai departe constructorului clasei moștenite.
+
+d. Definiţi în clasǎ metoda add(Student) ce va adǎuga un student în lista corespunzǎtoare mediei lui. Dacǎ în prealabil nu mai existǎ niciun student
+ cu media respectivǎ (rotunjitǎ), atunci lista va fi creatǎ la cerere.
+
+e. Testați clasa:
+- instanțiați un obiect Catalog și adăugați in el câţiva studenţi.
+- iteraţi pe Catalog şi sortaţi alfabetic fiecare listǎ de studenţi pentru fiecare notă.
+
+
+
+2. Creaţi o clasǎ care moşteneşte HashSet<Integer>.
+a. Definiţi în aceastǎ clasǎ o variabilǎ membru care reţine numǎrul total de elemente adǎugate. Pentru a contoriza acest lucru,
+suprascrieți metodele add şi addAll. Pentru adǎugarea efectivǎ a elementelor, folosiţi implementǎrile din clasa pǎrinte (HashSet).
+
+b. Testaţi folosind atât add cât şi addAll. Ce observaţi? Corectaţi dacǎ este cazul.
+
+c. Modificaţi implementarea astfel încât clasa voastrǎ sǎ moşteneascǎ LinkedList<Integer>. Ce observaţi? Ce concluzii trageţi?
+
+
